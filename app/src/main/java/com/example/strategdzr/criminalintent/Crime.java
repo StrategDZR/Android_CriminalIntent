@@ -1,6 +1,9 @@
 package com.example.strategdzr.criminalintent;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
+import java.util.Locale;
 import java.util.UUID;
 
 /**
@@ -15,7 +18,7 @@ public class Crime {
     private boolean mSolved;
 
 
-    public Crime(){
+    public Crime() {
         mId = UUID.randomUUID(); //generating random ID
         mDate = new Date();
     }
@@ -46,5 +49,11 @@ public class Crime {
 
     public void setTitle(String mTitle) {
         this.mTitle = mTitle;
+    }
+
+    public String getFormattedDate() {
+        mDate = Calendar.getInstance().getTime();
+        SimpleDateFormat formatter = new SimpleDateFormat("EEEE, dd-MM-yyyy", Locale.ROOT);
+        return formatter.format(mDate);
     }
 }
