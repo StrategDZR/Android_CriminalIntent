@@ -60,9 +60,8 @@ class CrimeAdapter extends RecyclerView.Adapter<CrimeHolder> {
 
     @Override
     public CrimeHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        //TODO getActivity below cannot be resolved
-        LayoutInflater layoutInflater = LayoutInflater.from(getActivity());
-        View view = layoutInflater
+        View view = LayoutInflater
+                .from(parent.getContext())
                 .inflate(android.R.layout.simple_list_item_1, parent, false);
         return new CrimeHolder(view);
 
