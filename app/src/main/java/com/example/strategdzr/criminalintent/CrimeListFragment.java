@@ -77,7 +77,7 @@ class CrimeHolder extends RecyclerView.ViewHolder
 
     @Override
     public void onClick(View v) {
-        Intent intent = CrimeActivity.newIntent(v.getContext(), mCrime.getId());
+        Intent intent = CrimePagerActivity.newIntent(v.getContext(), mCrime.getId());
         v.getContext().startActivity(intent);
     }
 }
